@@ -1,0 +1,22 @@
+﻿@model BLL.Models.ArticleBaseData
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>New Article</h1>
+</div>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input asp-for="Title" class="form-control"/>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Content" class="form-label">Content</label>
+        <textarea asp-for="Content" class="form-control" style="height: 350px;"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="CategoryId"/>
+    <button type="submit" class="btn btn-warning mt-2">Create</button>
+    <a asp-action="ByCategoryId" asp-route-categoryId="@Model.CategoryId" class="btn btn-secondary mt-2">Cancel</a>
+</form>

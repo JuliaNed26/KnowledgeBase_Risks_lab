@@ -1,0 +1,12 @@
+﻿@model BLL.Models.ArticleData
+
+<div class="container bg-light text-dark mt-5 mb-5 p-4 rounded shadow-lg">
+    <h1>@Model.Title</h1>
+    <pre>@Model.Content</pre>
+</div>
+
+<div class="mt-2">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-warning">Delete</a>
+    <a asp-action="ByCategoryId" asp-route-categoryId="@Model.CategoryId" class="btn btn-secondary">Back to List</a>
+</div>
